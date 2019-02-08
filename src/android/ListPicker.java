@@ -1,4 +1,4 @@
-package com.checkroom.plugins;
+package br.com.h3nr1ke.rd.plugins;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,6 +86,7 @@ public class ListPicker extends CordovaPlugin {
                             JSONObject json = new JSONObject();
                             json.put("action", "selectedValue");
                             json.put("value", selectedValue);
+                            json.put("index", index);
 
                             dialog.dismiss();
                             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, json));

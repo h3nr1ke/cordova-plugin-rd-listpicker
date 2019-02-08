@@ -10,14 +10,14 @@
             "name": "cordova-ios"
         }
     ],
-    "name": "com.checkroom.plugins.ListPicker",
+    "name": "cordova-plugin-rd-listpicker",
     "repository": {
-        "url": "git+https://github.com/jeroenv/PhoneGap-Plugin-ListPicker.git",
+        "url": "git+https://github.com/h3nr1ke/cordova-plugin-rd-listpicker.git",
         "type": "git"
     },
-    "author": "CHEQROOM",
+    "author": "Henrique Deodato",
     "bugs": {
-        "url": "https://github.com/jeroenv/PhoneGap-Plugin-ListPicker/issues"
+        "url": "https://github.com/h3nr1ke/cordova-plugin-rd-listpicker.git"
     },
     "version": "3.3.2",
     "keywords": [
@@ -30,8 +30,8 @@
             "ios",
             "android"
         ],
-        "id": "com.checkroom.plugins"
+        "id": "br.com.h3nr1ke.rd.plugins"
     },
-    "homepage": "https://github.com/jeroenv/PhoneGap-Plugin-ListPicker#readme",
+    "homepage": "https://github.com/h3nr1ke/cordova-plugin-rd-listpicker#readme",
     "description": "Listpicker plugin"
 }

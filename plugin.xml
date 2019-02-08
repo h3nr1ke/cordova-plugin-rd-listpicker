@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="com.checkroom.plugins.ListPicker"
+        id="cordova-plugin-rd-listpicker"
         version="2.2.2">
 
   <name>ListPicker</name>
 
   <description>
-  	PhoneGap plugin to display a list picker dialog for Android and iOS.
+  	Cordova plugin to display a list picker dialog for Android and iOS.
   </description>
 
   <license>MIT</license>
@@ -39,10 +39,10 @@
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="ListPicker">
-        <param name="android-package" value="com.checkroom.plugins.ListPicker" />
+        <param name="android-package" value="br.com.h3nr1ke.rd.plugins.ListPicker" />
       </feature>
     </config-file>
 
-    <source-file src="src/android/ListPicker.java" target-dir="src/com/checkroom/plugins/ListPicker" />
+    <source-file src="src/android/ListPicker.java" target-dir="src/br/com/h3nr1ke/rd/plugins/ListPicker" />
   </platform>
 </plugin>
