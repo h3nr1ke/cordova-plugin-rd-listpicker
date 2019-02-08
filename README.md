@@ -1,7 +1,7 @@
 ListPicker
 =============
 
-PhoneGap plugin to display a list picker dialog for Android and iOS.
+Cordova plugin to display a list picker dialog for Android and iOS.
 
 Usage:
 
