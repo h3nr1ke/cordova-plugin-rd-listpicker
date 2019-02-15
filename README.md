@@ -63,6 +63,10 @@ Licence:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     THE SOFTWARE.
 
+Contributors: 
+[Gabriel Ribeiro] (https://github.com/gabrielribeiro)
+[Henrique Deodato] (https://github.com/h3nr1ke)
+
 Credits:
 
 * iOS part inspired by 
