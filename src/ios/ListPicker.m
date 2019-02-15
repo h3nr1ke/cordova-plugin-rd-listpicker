@@ -325,9 +325,7 @@
 // Called by the picker view when it needs the view to use for a given row in a given component
  - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
      
-     CGFloat width = [self pickerView:self.pickerView widthForComponent:0];
-     
-     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 2, width, 44)];
+     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 2, pickerView.frame.size.width - 30, 44)];
      
      [label setMinimumScaleFactor:0.75];
      label.adjustsFontSizeToFitWidth = YES;
