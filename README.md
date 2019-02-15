@@ -64,8 +64,9 @@ Licence:
     THE SOFTWARE.
 
 Contributors: 
-[Gabriel Ribeiro] (https://github.com/gabrielribeiro)
-[Henrique Deodato] (https://github.com/h3nr1ke)
+
+* [Gabriel Ribeiro](https://github.com/gabrielribeiro)
+* [Henrique Deodato](https://github.com/h3nr1ke)
 
 Credits:
 
