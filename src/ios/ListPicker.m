@@ -287,6 +287,7 @@
         if(buttonIndex == 1){
             [resultDic setValue:@"selectedValue" forKey:@"action"];
             [resultDic setValue:selectedValue forKey:@"value"];
+            [resultDic setValue:selectedRow forKey:@"index"];
         }else{
             [resultDic setValue:@"clear" forKey:@"action"];
         }
