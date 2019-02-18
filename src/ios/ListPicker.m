@@ -272,32 +272,42 @@
 //
 
 - (void)sendResultsFromPickerView:(UIPickerView *)pickerView withButtonIndex:(NSInteger)buttonIndex {
-
     // Build returned result
     NSInteger selectedRow = [pickerView selectedRowInComponent:0];
-    NSString *selectedValue = [[self.items objectAtIndex:selectedRow] objectForKey:@"value"];
     
-    // Create Plugin Result
-    CDVPluginResult* pluginResult;
-    if (buttonIndex == 0) {
-        // Create ERROR result if cancel was clicked
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    }else{
-        NSMutableDictionary *resultDic = [NSMutableDictionary dictionary];
-        if(buttonIndex == 1){
-            [resultDic setValue:@"selectedValue" forKey:@"action"];
-            [resultDic setValue:selectedValue forKey:@"value"];
-            [resultDic setValue:@(selectedRow).stringValue forKey:@"index"];
-        }else{
-            [resultDic setValue:@"clear" forKey:@"action"];
+    [self.commandDelegate runInBackground:^{
+        // Create Plugin Result
+        CDVPluginResult* pluginResult;
+        
+        if (selectedRow >= [self.items count])
+        {
+            //No element exists at this index, you will receive index out of bounds exception and your application will crash if you ask for object at current indexPath.row.
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+            return [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
+        } else {
+            NSString *selectedValue = [[self.items objectAtIndex:selectedRow] objectForKey:@"value"];
+            
+            if (buttonIndex == 0) {
+                // Create ERROR result if cancel was clicked
+                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+            }else{
+                NSMutableDictionary *resultDic = [NSMutableDictionary dictionary];
+                if(buttonIndex == 1){
+                    [resultDic setValue:@"selectedValue" forKey:@"action"];
+                    [resultDic setValue:selectedValue forKey:@"value"];
+                    [resultDic setValue:@(selectedRow).stringValue forKey:@"index"];
+                }else{
+                    [resultDic setValue:@"clear" forKey:@"action"];
+                }
+                
+                // Create OK result otherwise
+                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:resultDic];
+            }
+            
+            // Call appropriate javascript function
+            return [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
         }
-        
-        // Create OK result otherwise
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:resultDic];
-    }
-        
-    // Call appropriate javascript function
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
+    }];
 }
 
 //
