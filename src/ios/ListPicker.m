@@ -19,14 +19,23 @@
 @synthesize items = _items;
 
 
-- (int)getRowWithValue:(NSString * )name {
+- (int)getRowWithValue:(NSString * )selectedValue {
   for(int i = 0; i < [self.items count]; i++) {
     NSDictionary *item = [self.items objectAtIndex:i];
-    if([name isEqualToString:[item objectForKey:@"value"]]) {
+    NSString *rowValue = [self getStringValue:[item objectForKey:@"value"]];
+    if([selectedValue isEqualToString:rowValue]) {
       return i;
     }
   }
   return -1;
+}
+
+- (NSString*)getStringValue:(NSObject*)value {
+    if ([value isKindOfClass:[NSNumber class]]) {
+        return [((NSNumber*)value) stringValue];
+    } else {
+        return (NSString*)value;
+    }
 }
 
 - (void)showPicker:(CDVInvokedUrlCommand*)command {
@@ -84,7 +93,8 @@
 
     // Define selected value
     if([options objectForKey:@"selectedValue"]) {
-        int i = [self getRowWithValue:[options objectForKey:@"selectedValue"]];
+        NSString *selectedValue = [self getStringValue:[options objectForKey:@"selectedValue"]];
+        int i = [self getRowWithValue:selectedValue];
         if (i != -1) [self.pickerView selectRow:i inComponent:0 animated:NO];
     }
    
