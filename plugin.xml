@@ -21,12 +21,8 @@
     <clobbers target="window.plugins.listpicker" />
   </js-module>
 
-  <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
-
   <!-- ios -->
   <platform name="ios">
-
-    <preference name="UseSwiftLanguageVersion" value="4" />
 
     <config-file target="config.xml" parent="/*">
       <feature name="ListPicker">
