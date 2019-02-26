@@ -34,9 +34,11 @@
       </feature>
     </config-file>
 
-    <source-file src="src/ios/Extensions.swift" />
     <header-file src="src/ios/ListPicker.h"/>
     <source-file src="src/ios/ListPicker.m"/>
+
+    <header-file src="src/ios/UIView+ListPicker.h"/>
+    <source-file src="src/ios/UIView+ListPicker.m"/>
   </platform>
 
   <!-- android -->
