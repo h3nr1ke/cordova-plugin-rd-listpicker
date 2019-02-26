@@ -30,8 +30,12 @@
       </feature>
     </config-file>
 
+    <header-file src="src/ios/UIView+ListPicker.h"/>
+    <source-file src="src/ios/UIView+ListPicker.m"/>
+
     <header-file src="src/ios/ListPicker.h"/>
     <source-file src="src/ios/ListPicker.m"/>
+
   </platform>
 
   <!-- android -->

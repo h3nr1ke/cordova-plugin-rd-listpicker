@@ -1,37 +1,62 @@
 {
-    "license": "Apache-2.0",
-    "engines": [
-        {
-            "version": ">=4.0",
-            "name": "cordova-android"
-        },
-        {
-            "version": ">=3.9.2",
-            "name": "cordova-ios"
-        }
+  "_from": "git+https://github.com/gabrielribeiro/cordova-plugin-rd-listpicker.git",
+  "_id": "cordova-plugin-rd-listpicker@3.3.2",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-rd-listpicker",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/gabrielribeiro/cordova-plugin-rd-listpicker",
+    "rawSpec": "https://github.com/gabrielribeiro/cordova-plugin-rd-listpicker",
+    "saveSpec": "git+https://github.com/gabrielribeiro/cordova-plugin-rd-listpicker.git",
+    "fetchSpec": "https://github.com/gabrielribeiro/cordova-plugin-rd-listpicker.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/gabrielribeiro/cordova-plugin-rd-listpicker.git#5b9547998cb34fbbe8df2e9bb9112f29ae280ee7",
+  "_spec": "https://github.com/gabrielribeiro/cordova-plugin-rd-listpicker",
+  "_where": "/Users/gabrielribeiro/Projects/TVF/Estapar/VagaInteligente",
+  "author": {
+    "name": "Henrique Deodato"
+  },
+  "bugs": {
+    "url": "https://github.com/h3nr1ke/cordova-plugin-rd-listpicker.git"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android"
     ],
-    "name": "cordova-plugin-rd-listpicker",
-    "repository": {
-        "url": "git+https://github.com/h3nr1ke/cordova-plugin-rd-listpicker.git",
-        "type": "git"
+    "id": "br.com.h3nr1ke.rd.plugins"
+  },
+  "deprecated": false,
+  "description": "Listpicker plugin",
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4.0"
     },
-    "author": "Henrique Deodato",
-    "bugs": {
-        "url": "https://github.com/h3nr1ke/cordova-plugin-rd-listpicker.git"
-    },
-    "version": "3.3.2",
-    "keywords": [
-        "ecosystem:cordova",
-        "cordova-ios",
-        "cordova-android"
-    ],
-    "cordova": {
-        "platforms": [
-            "ios",
-            "android"
-        ],
-        "id": "br.com.h3nr1ke.rd.plugins"
-    },
-    "homepage": "https://github.com/h3nr1ke/cordova-plugin-rd-listpicker#readme",
-    "description": "Listpicker plugin"
+    {
+      "name": "cordova-ios",
+      "version": ">=3.9.2"
+    }
+  ],
+  "homepage": "https://github.com/h3nr1ke/cordova-plugin-rd-listpicker#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "Apache-2.0",
+  "name": "cordova-plugin-rd-listpicker",
+  "repository": {
+    "url": "git+https://github.com/h3nr1ke/cordova-plugin-rd-listpicker.git",
+    "type": "git"
+  },
+  "version": "3.3.2"
 }
