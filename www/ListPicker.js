@@ -12,7 +12,7 @@ var ListPicker = function() {}
 ListPicker.prototype.showPicker = function(options, callback, error_callback) {
     options || (options = {});
     var scope = options.scope || null;
-    
+
     var config = {
         title: options.title || ' ',
         selectedValue: options.selectedValue || '',
@@ -20,17 +20,19 @@ ListPicker.prototype.showPicker = function(options, callback, error_callback) {
         style: options.style || 'default',
         doneButtonLabel: options.doneButtonLabel || 'Done',
         cancelButtonLabel: options.cancelButtonLabel || 'Cancel',
-        showClearButton: options.showClearButton || false
+        showClearButton: options.showClearButton || false,
+        alignment: options.alignment || '1',
+        subtitle: options.subtitle || '',
     };
-    
+
     var _callback = function() {
-        if(typeof callback == 'function') { 
+        if(typeof callback == 'function') {
           callback.apply(scope, arguments);
         }
     };
-    
+
     var _error_callback = function() {
-        if(typeof error_callback == 'function') { 
+        if(typeof error_callback == 'function') {
           error_callback.apply(scope, arguments);
         }
     };
