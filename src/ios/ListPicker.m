@@ -43,15 +43,15 @@
     [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]] setAdjustsFontSizeToFitWidth:YES];
     [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]] setNumberOfLines:2];
     [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]] setLineBreakMode:NSLineBreakByTruncatingTail];
-
-    [[UIVisualEffectView appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]]
-     setEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
-
-    [((UIView *)[NSClassFromString(@"_UIAlertControlleriOSActionSheetCancelBackgroundView")
-                 appearance]) setSubviewsBackgroundColor:[UIColor colorWithWhite:0 alpha:0.333]];
 }
 
 - (void)showPicker:(CDVInvokedUrlCommand*)command {
+    [[UIVisualEffectView appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]]
+     setEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+    
+    [((UIView *)[NSClassFromString(@"_UIAlertControlleriOSActionSheetCancelBackgroundView")
+                 appearance]) setSubviewsBackgroundColor:[UIColor colorWithWhite:0 alpha:0.333]];
+    
     self.callbackId = command.callbackId;
     options = [command.arguments objectAtIndex:0];
 
@@ -397,6 +397,9 @@
 
 - (void)sendResults:(NSString *)selectedValue andIndex:(int)index {
     [self.commandDelegate runInBackground:^{
+        [[UIVisualEffectView appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]]
+         setEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+        
         CDVPluginResult* pluginResult;
         
         if (selectedValue == nil) {
