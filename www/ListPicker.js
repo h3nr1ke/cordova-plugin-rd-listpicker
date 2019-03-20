@@ -20,6 +20,7 @@ ListPicker.prototype.showPicker = function(options, callback, error_callback) {
         style: options.style || 'default',
         doneButtonLabel: options.doneButtonLabel || 'Done',
         cancelButtonLabel: options.cancelButtonLabel || 'Cancel',
+        clearButtonLabel: options.clearButtonLabel || 'Clear',
         showClearButton: options.showClearButton || false,
         alignment: options.alignment || '1',
         subtitle: options.subtitle || '',
