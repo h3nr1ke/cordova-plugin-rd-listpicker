@@ -54,6 +54,8 @@ public class ListPicker extends CordovaPlugin {
         final JSONObject options = data.getJSONObject(0);
         final String title = options.getString("title");
         final String selectedValue = options.getString("selectedValue");
+        final String cancelLabel = options.getString("cancelButtonLabel");
+        final String clearLabel = options.getString("clearButtonLabel");
         final JSONArray items = options.getJSONArray("items");
         final boolean showClearButton = Boolean.parseBoolean(options.getString("showClearButton"));
 
@@ -104,7 +106,7 @@ public class ListPicker extends CordovaPlugin {
                 builder.setOnCancelListener(cancelListener);
                 
                 // Set Cancel button
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(cancelLabel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         cancelListener.onCancel(dialog);
                     }
@@ -112,7 +114,7 @@ public class ListPicker extends CordovaPlugin {
 
                 if(showClearButton){
                     //Set Clear button
-                    builder.setNeutralButton("Clear", new DialogInterface.OnClickListener() {
+                    builder.setNeutralButton(clearLabel, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             try {
                                 JSONObject json = new JSONObject();
