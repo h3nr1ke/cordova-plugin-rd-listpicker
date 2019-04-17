@@ -396,6 +396,9 @@
 #pragma mark - Results
 
 - (void)sendResults:(NSString *)selectedValue andIndex:(int)index {
+    [[UIVisualEffectView appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]]
+     setEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+    
     [self.commandDelegate runInBackground:^{
         CDVPluginResult* pluginResult;
         
@@ -420,6 +423,9 @@
 }
 
 - (void)sendResultsFromPickerView:(UIPickerView *)pickerView withButtonIndex:(NSInteger)buttonIndex {
+    [[UIVisualEffectView appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]]
+     setEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+    
     // Build returned result
     NSInteger selectedRow = [pickerView selectedRowInComponent:0];
     
@@ -480,24 +486,25 @@
 }
 
 // Called by the picker view when it needs the view to use for a given row in a given component
-//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
-//
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 2, pickerView.frame.size.width - 30, 44)];
-//
-//    [label setMinimumScaleFactor:0.75];
-//    label.adjustsFontSizeToFitWidth = YES;
-//    label.numberOfLines = 2;
-//    label.lineBreakMode = NSLineBreakByTruncatingTail;
-//    label.textAlignment = NSTextAlignmentCenter;
-//
-//    label.text = [[self.items objectAtIndex:row] objectForKey:@"text"];
-//    [label sizeToFit];
-//
-//    return label;
-//}
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+
+      UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 2, pickerView.frame.size.width - 30, 44)];
+
+      [label setMinimumScaleFactor:0.75];
+      label.adjustsFontSizeToFitWidth = YES;
+      label.numberOfLines = 2;
+      label.lineBreakMode = NSLineBreakByTruncatingTail;
+      label.textAlignment = NSTextAlignmentCenter;
+      label.textColor = UIColor.whiteColor;
+
+      label.text = [[self.items objectAtIndex:row] objectForKey:@"text"];
+      [label sizeToFit];
+
+      return label;
+}
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
-    return 48;
+    return 64;
 }
 
 // Tell the picker the width of each row for a given component
